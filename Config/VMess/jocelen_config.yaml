@@ -116,11 +116,16 @@ Proxy:
 # VMess
 - name: "jocelen_v2ray"
   type: vmess
-  server: 144.34.207.107
-  port: 18156
-  uuid: 326d832e-0ec3-461c-9967-5caae5b52fd1
-  alterId: 64
+  server: vpn.jocelen.top
+  port: 10086
+  uuid: 6d9dda99-9f79-4fb0-ba4a-8fd526783a83
+  alterId: 4
   cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-path: /ffdd2290/
+  
   
 - name: "527_v2ray"
   type: vmess

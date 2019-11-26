@@ -129,18 +129,15 @@ Proxy:
   
 - name: "527_v2ray"
   type: vmess
-  server: 64.64.239.7
-  port: 32341
-  uuid: bd879f06-490c-4e8f-bd78-132a7f352c2d
+  server: 527.jocelen.top
+  port: 443
+  uuid: cda8aa03-8201-4013-8594-7a85c7b48828
   alterId: 64
   cipher: auto
-  # udp: true
-  # tls: true
-  # skip-cert-verify: true
-  # network: ws
-  # ws-path: /path
-  # ws-headers:
-  #   Host: v2ray.com
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-path: /8bbd79ae/
 
 # 其他协议如 Socks5、HTTP、Snell 示例如下
 

@@ -224,8 +224,8 @@ Proxy Group:
 - name: "Apple"
   type: select
   proxies:
-    - "DIRECT"
     - "PROXY"
+    - "DIRECT"
 # 国际流媒体服务
 - name: "GlobalMedia"
   type: select

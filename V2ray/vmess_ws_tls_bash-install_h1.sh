@@ -433,7 +433,7 @@ vmess_qr_config(){
     cat >/etc/v2ray/vmess_qr.json <<-EOF
     {
         "v": "2",
-        "ps": "wulabing_${domain}",
+        "ps": "v2ray_${domain}",
         "add": "${domain}",
         "port": "${port}",
         "id": "${UUID}",

@@ -528,7 +528,7 @@ Rule:
 - DOMAIN-SUFFIX,ggpht.com,🚀Proxy
 - DOMAIN-SUFFIX,ghostnoteapp.com,🚀Proxy
 - DOMAIN-SUFFIX,git.io,🚀Proxy
-- DOMAIN-SUFFIX,github.com,🚀Proxy
+- DOMAIN-KEYWORD,github,🚀Proxy
 - DOMAIN-SUFFIX,globalsign.com,🚀Proxy
 - DOMAIN-SUFFIX,gmodules.com,🚀Proxy
 - DOMAIN-SUFFIX,godaddy.com,🚀Proxy

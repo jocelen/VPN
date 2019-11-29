@@ -126,83 +126,15 @@ Proxy:
   network: ws
   ws-path: /8bbd79ae/
 
-- name: "527_v2ray_1"
-  type: vmess
-  server: hk-azure-c.osoblanco.xyz
-  port: 855
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
 
-- name: "527_v2ray_2"
-  type: vmess
-  server: hk-azure-d.osoblanco.xyz
-  port: 855
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
-
-- name: "527_v2ray_3"
-  type: vmess
-  server: hk-azure-d.osoblanco.xyz
-  port: 855
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
-
-
-- name: "527_v2ray_4"
-  type: vmess
-  server: hk-ali-cn2-a.osoblanco.xyz
-  port: 853
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
-
-- name: "527_v2ray_5"
-  type: vmess
-  server: us-cn2-e.osoblanco.xyz
-  port: 625
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
-
-- name: "527_v2ray_6"
-  type: vmess
-  server: hk-hkt-e.osoblanco.xyz
-  port: 855
-  uuid: afa12ea3-0c7e-327e-9076-1feff161f022
-  alterId: 0
-  cipher: auto
 
 # 代理组策略
 Proxy Group:
-
-- name: "Auto自动选择节点"
-  type: fallback
-  proxies:
-    - "527_v2ray"
-    - "527_v2ray_1"
-    - "527_v2ray_2"
-    - "527_v2ray_3"
-    - "527_v2ray_4"
-    - "527_v2ray_5"
-    - "527_v2ray_6"
-  url: 'http://www.gstatic.com/generate_204'
-  interval: 300
-
 # 代理节点选择
 - name: "🚀Proxy"
   type: select
   proxies:
-    - "Auto自动选择节点"
     - "527_v2ray"
-    - "527_v2ray_1"
-    - "527_v2ray_2"
-    - "527_v2ray_3"
-    - "527_v2ray_4"
-    - "527_v2ray_5"
-    - "527_v2ray_6"
     
     
 Rule:
@@ -528,7 +460,7 @@ Rule:
 - DOMAIN-SUFFIX,ggpht.com,🚀Proxy
 - DOMAIN-SUFFIX,ghostnoteapp.com,🚀Proxy
 - DOMAIN-SUFFIX,git.io,🚀Proxy
-- DOMAIN-KEYWORD,github,🚀Proxy
+- DOMAIN-SUFFIX,github.com,🚀Proxy
 - DOMAIN-SUFFIX,globalsign.com,🚀Proxy
 - DOMAIN-SUFFIX,gmodules.com,🚀Proxy
 - DOMAIN-SUFFIX,godaddy.com,🚀Proxy

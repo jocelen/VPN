@@ -26,7 +26,7 @@ uname -r
 若第二步中确定服务器为 CentOS6 x64 系统则看这一步。
 按照下图提示，我们继续复制下列命令：
 `
-wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/jocelen/v2ray_speed/master/appex.sh && bash appex.sh install '2.6.32-642.el6.x86_64'
+wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/jocelen/VPN/master/ServerSpeeder/appex.sh && bash appex.sh install '2.6.32-642.el6.x86_64'
 `
 
 然后回到 Xshell 软件，鼠标右键选择粘贴，回车继续。
@@ -41,7 +41,7 @@ wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/jo
 若第二步中确定服务器为 CentOS7 x64 系统则看这一步。
 按照下图提示，我们继续复制下列命令：
 `
-wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/jocelen/v2ray_speed/master/rskernel.sh && bash rskernel.sh
+wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/jocelen/VPN/master/ServerSpeeder/rskernel.sh && bash rskernel.sh
 `
 然后回到 Xshell 软件，鼠标右键选择粘贴，回车继续。
 ￼
@@ -49,7 +49,7 @@ wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/joc
 ￼
 系统重启后，Xshell 软件会断开连接。等待 3~5 分钟服务器即可重启完毕，我们重新连接服务器，按照下图提示，我们继续复制命令：
 `
-yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/jocelen/v2ray_speed/master/appex.sh && bash appex.sh install
+yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/jocelen/VPN/master/ServerSpeeder/appex.sh && bash appex.sh install
 `
 然后回到 Xshell 软件，鼠标右键选择粘贴，回车继续。
 ￼

@@ -981,7 +981,7 @@ Rule:
 - DOMAIN-SUFFIX,zello.com,PROXY
 - DOMAIN-SUFFIX,zeronet.io,PROXY
 - DOMAIN-SUFFIX,zoom.us,PROXY
-- DOMAIN-KEYWORD,github,PROXY
+- DOMAIN-SUFFIX,github.com,PROXY
 - DOMAIN-KEYWORD,jav,PROXY
 - DOMAIN-KEYWORD,pinterest,PROXY
 - DOMAIN-KEYWORD,porn,PROXY
@@ -1482,6 +1482,7 @@ Rule:
 - DOMAIN-SUFFIX,zhihu.com,DIRECT
 - DOMAIN-SUFFIX,zhimg.com,DIRECT
 - DOMAIN-SUFFIX,zhuihd.com,DIRECT
+- DOMAIN-SUFFIX,tonymacx86.com,DIRECT
 - DOMAIN,download.jetbrains.com,DIRECT
 - DOMAIN,images-cn.ssl-images-amazon.com,DIRECT
 

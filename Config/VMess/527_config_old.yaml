@@ -1,142 +1,110 @@
-# HTTP 端口
+#---------------------------------------------------#
+## 更新：2019-11-14 04:44:14
+#---------------------------------------------------#
+
+# HTTP 代理端口
 port: 7890
 
-# SOCKS5 端口
+
+# SOCKS5 代理端口
 socks-port: 7891
 
-# Linux 及 macOS 的 redir 端口
-# redir-port: 7892
 
-allow-lan: false
+# Linux 和 macOS 的 redir 代理端口
+redir-port: 7892
 
-# Only applicable when setting allow-lan to true
-# "*": bind all IP addresses
-# 192.168.122.11: bind a single IPv4 address
-# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
-# bind-address: "*"
 
-# Rule / Global/ Direct (默认为 Rule 模式)
+# 允许局域网的连接
+allow-lan: true
+
+
+# 规则模式：Rule（规则） / Global（全局代理）/ Direct（全局直连）
 mode: Rule
 
-# 设置日志等级 (默认为 info)
-# info / warning / error / debug / silent
+
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / info / warning / error / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
 log-level: info
 
-# RESTful API for clash
-external-controller: 127.0.0.1:9090
 
-# you can put the static web resource (such as clash-dashboard) to a directory, and clash would serve in `${API}/ui`
-# input is a relative path to the configuration directory or an absolute path
+# Clash 的 RESTful API
+external-controller: 0.0.0.0:9090
+
+# RESTful API 的口令
+secret: 'OSOECO'
+
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
 # external-ui: folder
 
-# RESTful API 的口令 (可选)
-# secret: ""
-
-# experimental feature
-experimental:
-  ignore-resolve-fail: true # ignore dns resolve fail, default value is true
-
-# authentication of local SOCKS5/HTTP(S) server
-# authentication:
-#  - "user1:pass1"
-#  - "user2:pass2"
-
-# # experimental hosts, support wildcard (e.g. *.clash.dev Even *.foo.*.example.com)
-# # static domain has a higher priority than wildcard domain (foo.example.com > *.example.com)
-# hosts:
-#   '*.clash.dev': 127.0.0.1
-#   'alpha.clash.dev': '::1'
-
-# DNS 设置
-# dns:
-#   enable: true
-#   listen: 0.0.0.0:53
-#   enhanced-mode: fake-ip
-#   nameserver:
-#    - 119.29.29.29
-#    - 223.5.5.5
-
-# Clash for Windows
-cfw-bypass:
-  - qq.com
-  - music.163.com
-  - '*.music.126.net'
-  - localhost
-  - 127.*
-  - 10.*
-  - 172.16.*
-  - 172.17.*
-  - 172.18.*
-  - 172.19.*
-  - 172.20.*
-  - 172.21.*
-  - 172.22.*
-  - 172.23.*
-  - 172.24.*
-  - 172.25.*
-  - 172.26.*
-  - 172.27.*
-  - 172.28.*
-  - 172.29.*
-  - 172.30.*
-  - 172.31.*
-  - 192.168.*
-  - <local>
-cfw-latency-timeout: 5000
-
-# 代理节点
 Proxy:
-# 更多协议配置示例：https://github.com/Dreamacro/clash/blob/master/README.md
+  - {"name":"⭐️ 回国节点 - 200M上海","type":"vmess","server":"cn-back-to-china.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"2","cipher":"auto"}
+  - {"name":"⭐️ 新加坡CN2-F - Netflix","type":"vmess","server":"sg-cn2-f.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"8","cipher":"auto"}
+  - {"name":"⭐️ 香港Azure-A","type":"vmess","server":"hk-azure-a.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港Azure-B","type":"vmess","server":"hk-azure-b.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港Azure-C","type":"vmess","server":"hk-azure-c.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港Azure-D","type":"vmess","server":"hk-azure-d.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港CN2-C - Netflix","type":"vmess","server":"hk-cn2-c.osoblanco.xyz","port":"3306","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港阿里云-A","type":"vmess","server":"hk-ali-cn2-a.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港阿里云-C","type":"vmess","server":"hk-ali-cn2-c.osoblanco.xyz","port":"80","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️ 香港阿里云-D","type":"vmess","server":"hk-ali-cn2-d.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 台湾Hinet-A - Netflix 动画疯 / ∞无限流量","type":"vmess","server":"tw-hinet-a.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 台湾Hinet-C - Netflix 动画疯 / ∞无限流量","type":"vmess","server":"tw-hinet-c.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 日本GMO-A - Netflix / ∞无限流量 / 联通移动专属","type":"vmess","server":"jp-gmo-a.osoblanco.xyz","port":"8853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 日本IIJ-A - ∞无限流量 / 联通移动专属","type":"vmess","server":"jp-iij-a.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 日本IIJ-B - ∞无限流量 / 联通移动专属","type":"vmess","server":"jp-iij-b.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 美国CN2-A - ∞无限流量 / 电信联通专属","type":"vmess","server":"us-cn2-a.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 美国CN2-B - ∞无限流量 / 电信联通专属","type":"vmess","server":"us-cn2-b.osoblanco.xyz","port":"845","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 美国CN2-C - ∞无限流量 / 电信联通专属","type":"vmess","server":"us-cn2-c.osoblanco.xyz","port":"835","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 美国CN2-D - ∞无限流量 / 电信联通专属","type":"vmess","server":"us-cn2-d.osoblanco.xyz","port":"710","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 美国CN2-I - ∞无限流量 / 电信联通专属","type":"vmess","server":"us-cn2-i.osoblanco.xyz","port":"710","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 香港HKT-G - Netflix / ∞无限流量","type":"vmess","server":"hk-hkt-g.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 香港HKT-H - Netflix / ∞无限流量","type":"vmess","server":"hk-hkt-h.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"⭐️♾️ 香港WTT-A - Netflix / ∞无限流量","type":"vmess","server":"hk-wtt-a.osoblanco.xyz","port":"3630","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"台湾Hinet-B - Netflix 动画疯","type":"vmess","server":"tw-hinet-b.osoblanco.xyz","port":"845","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto","tls":true}
+  - {"name":"台湾Hinet-D - Netflix 动画疯","type":"vmess","server":"tw-hinet-d.osoblanco.xyz","port":"845","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-A - Netflix","type":"vmess","server":"sg-cn2-a.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-B - Netflix","type":"vmess","server":"sg-cn2-b.osoblanco.xyz","port":"80","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-C - Netflix","type":"vmess","server":"sg-cn2-c.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-D - Netflix","type":"vmess","server":"sg-cn2-d.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-E - Netflix","type":"vmess","server":"sg-cn2-e.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-G - Netflix","type":"vmess","server":"sg-cn2-g.osoblanco.xyz","port":"80","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"新加坡CN2-H - Netflix","type":"vmess","server":"sg-cn2-h.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"4","cipher":"auto"}
+  - {"name":"日本Azure-A","type":"vmess","server":"jp-azure-a.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"日本Azure-B","type":"vmess","server":"jp-azure-b.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"日本GMO-B - Netflix / 联通移动专属","type":"vmess","server":"jp-gmo-b.osoblanco.xyz","port":"8853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"日本IIJ-C - 联通移动专属","type":"vmess","server":"jp-iij-c.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"日本IIJ-D - 联通移动专属","type":"vmess","server":"jp-iij-d.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto","network":"ws","ws-path":"/ms","ws-headers":{"Host":"ajax.microsoft.com"}}
+  - {"name":"美国CN2-E - 电信联通专属","type":"vmess","server":"us-cn2-e.osoblanco.xyz","port":"625","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"美国CN2-F - 电信联通专属","type":"vmess","server":"us-cn2-f.osoblanco.xyz","port":"660","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"美国CN2-G - 电信联通专属","type":"vmess","server":"us-cn2-g.osoblanco.xyz","port":"660","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"美国CN2-H - 电信联通专属","type":"vmess","server":"us-cn2-h.osoblanco.xyz","port":"660","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"美国CN2-J - 电信联通专属","type":"vmess","server":"us-cn2-j.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto","network":"ws","ws-path":"/ms","ws-headers":{"Host":"ajax.microsoft.com"}}
+  - {"name":"美国GIA-CN2-A - Netflix","type":"vmess","server":"us-gia-cn2.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"美国GIA-CN2-B - Netflix","type":"vmess","server":"us-gia-cn2-b.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港Azure-E","type":"vmess","server":"hk-azure-e.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港Azure-F","type":"vmess","server":"hk-azure-f.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港Azure-G","type":"vmess","server":"hk-azure-g.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-A - Netflix","type":"vmess","server":"hk-cn2-a.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"2","cipher":"auto"}
+  - {"name":"香港CN2-B - Netflix","type":"vmess","server":"hk-cn2-b.osoblanco.xyz","port":"8889","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"2","cipher":"auto"}
+  - {"name":"香港CN2-D","type":"vmess","server":"hk-cn2-d.osoblanco.xyz","port":"3306","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-E","type":"vmess","server":"hk-cn2-e.osoblanco.xyz","port":"3306","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-F","type":"vmess","server":"hk-cn2-f.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-G - Netflix","type":"vmess","server":"hk-cn2-g.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"2","cipher":"auto"}
+  - {"name":"香港CN2-H - Netflix","type":"vmess","server":"hk-cn2-h.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-I","type":"vmess","server":"hk-cn2-i.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-J","type":"vmess","server":"hk-cn2-j.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港CN2-K","type":"vmess","server":"hk-cn2-k.osoblanco.xyz","port":"1433","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"4","cipher":"auto"}
+  - {"name":"香港HKT-E - Netflix","type":"vmess","server":"hk-hkt-e.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港HKT-F - Netflix","type":"vmess","server":"hk-hkt-f.osoblanco.xyz","port":"855","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港WTT-B - Netflix","type":"vmess","server":"hk-wtt-b.osoblanco.xyz","port":"3631","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
+  - {"name":"香港阿里云-B","type":"vmess","server":"hk-ali-cn2-b.osoblanco.xyz","port":"853","uuid":"afa12ea3-0c7e-327e-9076-1feff161f022","alterId":"0","cipher":"auto"}
 
-# Shadowsocks 支持的加密方式:
-#   aes-128-gcm aes-192-gcm aes-256-gcm
-#   aes-128-cfb aes-192-cfb aes-256-cfb
-#   aes-128-ctr aes-192-ctr aes-256-ctr
-#   rc4-md5 chacha20 chacha20-ietf xchacha20
-#   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
 
-# Shadowsocks + v2ray-plugin
-#- name: "ss"
-#  type: ss
-#  server: 1.2.4.8
-#  port: 443
-#  cipher: chacha20-ietf-poly1305
-#  password: "password"
-#  plugin: v2ray-plugin
-#  plugin-opts:
-#    mode: websocket # no QUIC now
-    # tls: true # wss
-    # skip-cert-verify: true
-    # host: bing.com
-    # path: "/"
-    # mux: true
-    # headers:
-    #   custom: value
-
-# VMess
-- name: "527_v2ray"
-  type: vmess
-  server: 527.jocelen.top
-  port: 443
-  uuid: cda8aa03-8201-4013-8594-7a85c7b48828
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: ws
-  ws-path: /8bbd79ae/
-
-
-
-# 代理组策略
 Proxy Group:
-# 代理节点选择
-- name: "🚀Proxy"
-  type: select
-  proxies:
-    - "527_v2ray"
-    
-    
+- { name: "Auto自动选择节点", type: fallback, proxies: ["⭐️ 新加坡CN2-F - Netflix", "⭐️ 香港Azure-A", "⭐️ 香港Azure-B", "⭐️ 香港Azure-C", "⭐️ 香港Azure-D", "⭐️ 香港CN2-C - Netflix", "⭐️ 香港阿里云-A", "⭐️ 香港阿里云-C", "⭐️ 香港阿里云-D", "⭐️♾️ 台湾Hinet-A - Netflix 动画疯 / ∞无限流量", "⭐️♾️ 台湾Hinet-C - Netflix 动画疯 / ∞无限流量", "⭐️♾️ 日本GMO-A - Netflix / ∞无限流量 / 联通移动专属", "⭐️♾️ 日本IIJ-A - ∞无限流量 / 联通移动专属", "⭐️♾️ 日本IIJ-B - ∞无限流量 / 联通移动专属", "⭐️♾️ 美国CN2-A - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-B - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-C - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-D - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-I - ∞无限流量 / 电信联通专属", "⭐️♾️ 香港HKT-G - Netflix / ∞无限流量", "⭐️♾️ 香港HKT-H - Netflix / ∞无限流量", "⭐️♾️ 香港WTT-A - Netflix / ∞无限流量", "台湾Hinet-B - Netflix 动画疯", "台湾Hinet-D - Netflix 动画疯", "新加坡CN2-A - Netflix", "新加坡CN2-B - Netflix", "新加坡CN2-C - Netflix", "新加坡CN2-D - Netflix", "新加坡CN2-E - Netflix", "新加坡CN2-G - Netflix", "新加坡CN2-H - Netflix", "日本Azure-A", "日本Azure-B", "日本GMO-B - Netflix / 联通移动专属", "日本IIJ-C - 联通移动专属", "日本IIJ-D - 联通移动专属", "美国CN2-E - 电信联通专属", "美国CN2-F - 电信联通专属", "美国CN2-G - 电信联通专属", "美国CN2-H - 电信联通专属", "美国CN2-J - 电信联通专属", "美国GIA-CN2-A - Netflix", "美国GIA-CN2-B - Netflix", "香港Azure-E", "香港Azure-F", "香港Azure-G", "香港CN2-A - Netflix", "香港CN2-B - Netflix", "香港CN2-D", "香港CN2-E", "香港CN2-F", "香港CN2-G - Netflix", "香港CN2-H - Netflix", "香港CN2-I", "香港CN2-J", "香港CN2-K", "香港HKT-E - Netflix", "香港HKT-F - Netflix", "香港WTT-B - Netflix", "香港阿里云-B"], url: "http://www.gstatic.com/generate_204", interval: 300 }
+- { name: "🚀Proxy", type: select, proxies: ["Auto自动选择节点", "⭐️ 新加坡CN2-F - Netflix", "⭐️ 香港Azure-A", "⭐️ 香港Azure-B", "⭐️ 香港Azure-C", "⭐️ 香港Azure-D", "⭐️ 香港CN2-C - Netflix", "⭐️ 香港阿里云-A", "⭐️ 香港阿里云-C", "⭐️ 香港阿里云-D", "⭐️♾️ 台湾Hinet-A - Netflix 动画疯 / ∞无限流量", "⭐️♾️ 台湾Hinet-C - Netflix 动画疯 / ∞无限流量", "⭐️♾️ 日本GMO-A - Netflix / ∞无限流量 / 联通移动专属", "⭐️♾️ 日本IIJ-A - ∞无限流量 / 联通移动专属", "⭐️♾️ 日本IIJ-B - ∞无限流量 / 联通移动专属", "⭐️♾️ 美国CN2-A - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-B - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-C - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-D - ∞无限流量 / 电信联通专属", "⭐️♾️ 美国CN2-I - ∞无限流量 / 电信联通专属", "⭐️♾️ 香港HKT-G - Netflix / ∞无限流量", "⭐️♾️ 香港HKT-H - Netflix / ∞无限流量", "⭐️♾️ 香港WTT-A - Netflix / ∞无限流量", "台湾Hinet-B - Netflix 动画疯", "台湾Hinet-D - Netflix 动画疯", "新加坡CN2-A - Netflix", "新加坡CN2-B - Netflix", "新加坡CN2-C - Netflix", "新加坡CN2-D - Netflix", "新加坡CN2-E - Netflix", "新加坡CN2-G - Netflix", "新加坡CN2-H - Netflix", "日本Azure-A", "日本Azure-B", "日本GMO-B - Netflix / 联通移动专属", "日本IIJ-C - 联通移动专属", "日本IIJ-D - 联通移动专属", "美国CN2-E - 电信联通专属", "美国CN2-F - 电信联通专属", "美国CN2-G - 电信联通专属", "美国CN2-H - 电信联通专属", "美国CN2-J - 电信联通专属", "美国GIA-CN2-A - Netflix", "美国GIA-CN2-B - Netflix", "香港Azure-E", "香港Azure-F", "香港Azure-G", "香港CN2-A - Netflix", "香港CN2-B - Netflix", "香港CN2-D", "香港CN2-E", "香港CN2-F", "香港CN2-G - Netflix", "香港CN2-H - Netflix", "香港CN2-I", "香港CN2-J", "香港CN2-K", "香港HKT-E - Netflix", "香港HKT-F - Netflix", "香港WTT-B - Netflix", "香港阿里云-B"] }
+
 Rule:
 # 用户自定义规则
 
@@ -460,7 +428,7 @@ Rule:
 - DOMAIN-SUFFIX,ggpht.com,🚀Proxy
 - DOMAIN-SUFFIX,ghostnoteapp.com,🚀Proxy
 - DOMAIN-SUFFIX,git.io,🚀Proxy
-- DOMAIN-SUFFIX,github.com,🚀Proxy
+- DOMAIN-KEYWORD,github,🚀Proxy
 - DOMAIN-SUFFIX,globalsign.com,🚀Proxy
 - DOMAIN-SUFFIX,gmodules.com,🚀Proxy
 - DOMAIN-SUFFIX,godaddy.com,🚀Proxy

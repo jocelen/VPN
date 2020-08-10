@@ -114,7 +114,7 @@ Proxy:
     #   custom: value
 
 # VMess
-- name: "jocelen_v2ray"
+- name: "527_v2ray"
   type: vmess
   server: vpn.jocelen.top
   port: 443

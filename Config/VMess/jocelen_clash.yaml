@@ -225,8 +225,8 @@ proxy-groups:
   - name: "Fallback"
     type: fallback
     proxies:
-      - jocelen_v2ray
       - 527_v2ray
+      - jocelen_v2ray
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 

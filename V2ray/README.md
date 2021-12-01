@@ -3,19 +3,10 @@
 
 脚本适用于：Debian 9+ / Ubuntu 18.04+ / Centos7+
 
-两个安装方式（不兼容，二选一）
-
 1.Vmess+websocket+TLS+Nginx+Website
 `
 bash <(curl -L -s https://raw.githubusercontent.com/jocelen/VPN/master/V2ray/vmess_ws_tls_bash-install_h1.sh) | tee v2ray_ins.log
 `
-
-
-2.Vmess + HTTP2 over TLS
-`
-bash <(curl -L -s https://raw.githubusercontent.com/jocelen/VPN/master/V2ray/vmess_ws_tls_bash-install_h2.sh) | tee v2ray_ins_h2.log
-`
-
 
 脚本启动方式
 

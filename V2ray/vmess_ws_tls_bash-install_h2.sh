@@ -179,7 +179,6 @@ getVersion() {
     CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
     TAG_URL="${V6_PROXY}https://api.github.com/repos/v2fly/v2ray-core/releases/latest"
     NEW_VER="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| tr ',' '\n' | grep 'tag_name' | cut -d\" -f4)")"
-    NEW_VER=v4.32.1
     if [[ "$XTLS" = "true" ]]; then
         NEW_VER=v4.32.1
     fi
@@ -1383,6 +1382,8 @@ install() {
 
     colorEcho $BLUE " 安装V2ray..."
     getVersion
+    NEW_VER=v4.32.1
+    colorEcho $BLUE " V2ray最新版会报错，所以直接设置为旧版 ${NEW_VER}"
     RETVAL="$?"
     if [[ $RETVAL == 0 ]]; then
         colorEcho $BLUE " V2ray最新版 ${CUR_VER} 已经安装"

@@ -28,4 +28,7 @@ V2ray 客户端配置: 执行安装时所在目录下的 v2ray_info.txt
 
 Nginx 目录： /etc/nginx
 
+自动证书
+letsencrypt
+
 证书目录: /data/v2ray.key 和 /data/v2ray.crt
